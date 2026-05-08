@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="/static/styles.css" rel="stylesheet" />
+        <script src="/static/index.js"></script>
+        <title>Main page</title>
+
+    </head>
+    <body>
+        <div class="header">
+            MASTERMIND
+        </div>
+        <table id="mmHeader">
+            <tr>
+                <td><button class="tbutton" style="background-color: green;" onclick="analyzeRow()">SUBMIT</button></td>
+                <td><button class="tbutton" onclick="addRow()">NEXT ROW</button></td>
+                <td><button class="tbutton" style="background-color: red;" onclick="removeRow()">RESTART</button></td>
+            </tr>
+        </table>
+        <table id="mmTable">
+            <tr>
+            </tr>
+        </table>
+        <table id="mmComment" style="margin: 0.25rem auto;">
+            <tr>
+            </tr>
+        </table>
+        <div class="footer">
+            <hr>
+            <table id="mmFooter" style="margin: 0rem; width: 100%;">
+                <tr>
+                    <td style="text-align:right; width: 39.75%; font-size:18px;">Color Legend:</td>
+                    <td style="width: 20.5%">
+                        <input type="button" class="peg-small red">
+                        <input type="button" class="peg-small orange">
+                        <input type="button" class="peg-small ocean">
+                        <input type="button" class="peg-small plum">
+                        <input type="button" class="peg-small olive">
+                        <input type="button" class="peg-small yellow">            
+                        <input type="button" class="peg-small green">
+                        <input type="button" class="peg-small gray">
+                        <input type="button" class="peg-small pink">            
+                        <input type="button" class="peg-small black">
+                    </td>
+                    <td style="text-align:right; width:6%; font-size:18px;">Scoring:</td>
+                    <td style="text-align:left; font-size:18px;"><button class="rpegbk" style="visibility: visible;">x</button>
+                          One color in correct spot</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="text-align:left; font-size:18px;"><button class="rpegwh">x</button>
+                          One color correct, but in wrong position</td>
+                </tr>
+            </table>
+        </div>
+
+    </body>
+    <footer></footer>
+</html>
