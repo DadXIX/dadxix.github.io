@@ -168,13 +168,10 @@ function analyzeRow() {
         cell[4].innerHTML = '<button class="rpegbk" style="visibility: visible;">x</button>'
         cell[5].innerHTML = '<button class="rpegbk" style="visibility: visible;">x</button>'
         cell[6].innerHTML = '<button class="rpegbk" style="visibility: visible;">x</button>'
-        // cell[7].innerHTML = '<button class="rpegx" style="visibility: visible;">x</button>'
     }
     else if (xCount == 2){
         cell[4].innerHTML = '<button class="rpegbk" style="visibility: visible;">x</button>'
         cell[5].innerHTML = '<button class="rpegbk" style="visibility: visible;">x</button>'
-        // cell[6].innerHTML = '<button class="rpegx" style="visibility: visible;">x</button>'
-        // cell[7].innerHTML = '<button class="rpegx" style="visibility: visible;">x</button>'
         if (oCount == 2){
             cell[6].innerHTML = '<button class="rpegwh" style="visibility: visible;">x</button>'
             cell[7].innerHTML = '<button class="rpegwh" style="visibility: visible;">x</button>'
@@ -185,9 +182,6 @@ function analyzeRow() {
     }
     else if (xCount == 1){
         cell[4].innerHTML = '<button class="rpegbk" style="visibility: visible;">x</button>'
-        // cell[5].innerHTML = '<button class="rpegx" style="visibility: visible;">x</button>'
-        // cell[6].innerHTML = '<button class="rpegx" style="visibility: visible;">x</button>'
-        // cell[7].innerHTML = '<button class="rpegx" style="visibility: visible;">x</button>'
         if (oCount == 3){
             cell[5].innerHTML = '<button class="rpegwh" style="visibility: visible;">x</button>'
             cell[6].innerHTML = '<button class="rpegwh" style="visibility: visible;">x</button>'
@@ -211,68 +205,84 @@ function analyzeRow() {
         cell[4].innerHTML = '<button class="rpegwh" style="visibility: visible;">x</button>'
         cell[5].innerHTML = '<button class="rpegwh" style="visibility: visible;">x</button>'
         cell[6].innerHTML = '<button class="rpegwh" style="visibility: visible;">x</button>'
-        // cell[7].innerHTML = '<button class="rpegx" style="visibility: visible;">x</button>'
     }
     else if (oCount == 2){
         cell[4].innerHTML = '<button class="rpegwh" style="visibility: visible;">x</button>'
         cell[5].innerHTML = '<button class="rpegwh" style="visibility: visible;">x</button>'
-        // cell[6].innerHTML = '<button class="rpegx" style="visibility: visible;">x</button>'
-        // cell[7].innerHTML = '<button class="rpegx" style="visibility: visible;">x</button>'
     }
     else if (oCount == 1){
         cell[4].innerHTML = '<button class="rpegwh" style="visibility: visible;">x</button>'
-        // cell[5].innerHTML = '<button class="rpegx" style="visibility: visible;">x</button>'
-        // cell[6].innerHTML = '<button class="rpegx" style="visibility: visible;">x</button>'
-        // cell[7].innerHTML = '<button class="rpegx" style="visibility: visible;">x</button>'
+    }
+    else {
+        cell[4].innerHTML = '<button class="rpegx" style="visibility: visible;">x</button>'
+        cell[5].innerHTML = '<button class="rpegx" style="visibility: visible;">x</button>'
+        cell[6].innerHTML = '<button class="rpegx" style="visibility: visible;">x</button>'
+        cell[7].innerHTML = '<button class="rpegx" style="visibility: visible;">x</button>'
+    }
+
+    // remove current row event listeners
+    if (tbodyRowCount > 1) {
+        prevCell0 = table.rows[tbodyRowCount-1].cells[0]
+        prevCell1 = table.rows[tbodyRowCount-1].cells[1]
+        prevCell2 = table.rows[tbodyRowCount-1].cells[2]
+        prevCell3 = table.rows[tbodyRowCount-1].cells[3]
+        prevCell0.removeEventListener('click', getRowColumnDetails)
+        prevCell1.removeEventListener('click', getRowColumnDetails)
+        prevCell2.removeEventListener('click', getRowColumnDetails)
+        prevCell3.removeEventListener('click', getRowColumnDetails)
     }
     // increment turn
     game_status[1]++
-    // alert(game_status[1])
+    
     // check for win or lose condition
     if (game_status[0] == 1){
         addWin()
     }
     else if (game_status[1] > 9){
-        // alert("You lose. Answer: " + ans_key)
-        addAnswer()
+        addResult()
     }
 }
 
 function removeRow() {
+    //reset the game table
     var table = document.getElementById("mmTable")
     var tbodyRowCount = table.tBodies[0].rows.length;
     for (var i = 0; i < tbodyRowCount - 1; i++) {
         table.deleteRow(-1)
     }
+    //reset the end of game answer
     var table1 = document.getElementById("mmComment")
     var tbodyRowCount = table1.tBodies[0].rows.length;
     for (var j = 0; j < tbodyRowCount - 1; j++) {
         table1.deleteRow(-1)
     }
+    //reset the end of game comment
+    var result = document.getElementById("mmResult")
+    result.innerHTML = ''
+    //reset the color board and get new answer key
     init_color_board()
     ans_key = generate_answer_key();
 }
 
-function addAnswer() {
-    var table = document.getElementById("mmTable")
+function addResult() {
+    var result = document.getElementById("mmResult")
+    result.innerHTML = '<h4>You lose. This is the correct answer</h4>'
+    // add answer
+    var table = document.getElementById("mmComment")
     var row = table.insertRow(-1)
     var cell1 = row.insertCell(0)
     var cell2 = row.insertCell(1)
     var cell3 = row.insertCell(2)
     var cell4 = row.insertCell(3)
-    var cell5 = row.insertCell(4)
     cell1.innerHTML = get_color(ans_key[0])
     cell2.innerHTML = get_color(ans_key[1])
     cell3.innerHTML = get_color(ans_key[2])
     cell4.innerHTML = get_color(ans_key[3])
-    cell5.innerHTML = '<h4>Correct Answer</h4>'
 }
 
 function addWin() {
-    var table = document.getElementById("mmComment")
-    var row = table.insertRow(-1)
-    var cell1 = row.insertCell(0)
-    cell1.innerHTML = '<h4>You win!</h4>'
+    var result = document.getElementById("mmResult")
+    result.innerHTML = '<h4>You win!</h4>'
 }
 
 function addRow() {
@@ -280,7 +290,7 @@ function addRow() {
     if (game_status[0] == 1 || game_status[1] > 9 || game_status[2] == 0) {
         return
     }
- 
+
     var table = document.getElementById("mmTable")
     var row = table.insertRow(-1)
     var cell1 = row.insertCell(0)
@@ -304,6 +314,8 @@ function addRow() {
     cell2.addEventListener('click', getRowColumnDetails)
     cell3.addEventListener('click', getRowColumnDetails)
     cell4.addEventListener('click', getRowColumnDetails)
+
+
 
     // after a next row press: disable next row functionality until 
     // current row has been submitted 
