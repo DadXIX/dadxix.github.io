@@ -19,6 +19,10 @@ tr, td {
     padding: 0.25rem 0.25rem;
 }
 
+p {
+    font-size: 1.0625rem;
+}
+
 /* Class selector */
 /* a result peg - x version*/
 .rpegx {
@@ -29,7 +33,7 @@ tr, td {
     background-color: gray;
     color: black;
     border-radius: 0.9rem;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 /* a result peg - black version*/
@@ -41,7 +45,7 @@ tr, td {
     background-color: black;
     color: black;
     border-radius: 0.9rem;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 /* a result peg - white version*/
@@ -53,7 +57,7 @@ tr, td {
     background-color: white;
     color: white;
     border-radius: 0.9rem;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .tpeg {
@@ -64,7 +68,7 @@ tr, td {
     background-color: white;
     color: white;
     border-radius: 1.5rem;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
 }
 
@@ -76,7 +80,7 @@ tr, td {
     background-color: red;
     color: white;
     border-radius: 1.5rem;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
 }
 
@@ -88,7 +92,7 @@ tr, td {
     background-color: orange;
     color: white;
     border-radius: 1.5rem;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
 }
 
@@ -100,7 +104,7 @@ tr, td {
     background-color: #18a7b7;
     color: white;
     border-radius: 1.5rem;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
 }
 
@@ -112,7 +116,7 @@ tr, td {
     background-color: plum;
     color: white;
     border-radius: 1.5rem;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
 }
 
@@ -124,7 +128,7 @@ tr, td {
     background-color: olive;
     color: white;
     border-radius: 1.5rem;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
 }
 
@@ -136,7 +140,7 @@ tr, td {
     background-color: yellow;
     color: white;
     border-radius: 1.5rem;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
 }
 
@@ -148,7 +152,7 @@ tr, td {
     background-color: #80ff80;
     color: white;
     border-radius: 1.5rem;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
 }
 
@@ -160,7 +164,7 @@ tr, td {
     background-color: gray;
     color: white;
     border-radius: 1.5rem;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
 }
 
@@ -172,7 +176,7 @@ tr, td {
     background-color: #fe6d6d;
     color: white;
     border-radius: 1.5rem;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
 }
 
@@ -184,7 +188,7 @@ tr, td {
     background-color: black;
     color: white;
     border-radius: 1.5rem;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
 }
 
@@ -197,7 +201,7 @@ tr, td {
     color: white;
     border-radius: .75rem;
     /* border: none; */
-    font-size: 14px;
+    font-size: 0.875rem;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -211,7 +215,7 @@ tr, td {
     background-color: white;
     color: white;
     border-radius: 1.7rem;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
 }
 
@@ -222,7 +226,7 @@ tr, td {
     margin: .125rem;
     color: white;
     border-radius: 0.9rem;
-    font-size: 10px;
+    font-size: 0.625rem;
     cursor: pointer;
 }
 
@@ -233,9 +237,10 @@ tr, td {
     margin: 1rem;
     background-color: #477BFF;
     color: white;
+    border: red;
     border-radius: .75rem;
     /* border: none; */
-    font-size: 16px;
+    font-size: 1rem;
     text-align: center;
     text-decoration: none;
     cursor: pointer;

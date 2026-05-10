@@ -266,7 +266,7 @@ function removeRow() {
 
 function addResult() {
     var result = document.getElementById("mmResult")
-    result.innerHTML = '<h4>You lose. This is the correct answer</h4>'
+    result.innerHTML = '<h4>You lose. This is the correct answer:</h4>'
     // add answer
     var table = document.getElementById("mmComment")
     var row = table.insertRow(-1)
@@ -274,10 +274,18 @@ function addResult() {
     var cell2 = row.insertCell(1)
     var cell3 = row.insertCell(2)
     var cell4 = row.insertCell(3)
+    var cell5 = row.insertCell(4)
+    var cell6 = row.insertCell(5)
+    var cell7 = row.insertCell(6)
+    var cell8 = row.insertCell(7)
     cell1.innerHTML = get_color(ans_key[0])
     cell2.innerHTML = get_color(ans_key[1])
     cell3.innerHTML = get_color(ans_key[2])
     cell4.innerHTML = get_color(ans_key[3])
+    cell5.innerHTML = '<button class="rpegx" style="visibility: hidden;">x</button>'
+    cell6.innerHTML = '<button class="rpegx" style="visibility: hidden;">x</button>'
+    cell7.innerHTML = '<button class="rpegx" style="visibility: hidden;">x</button>'
+    cell8.innerHTML = '<button class="rpegx" style="visibility: hidden;">x</button>'
 }
 
 function addWin() {
@@ -305,10 +313,10 @@ function addRow() {
     cell2.innerHTML = '<button class="tpeg"></button>'
     cell3.innerHTML = '<button class="tpeg"></button>'
     cell4.innerHTML = '<button class="tpeg"></button>'
-    acell1.innerHTML = '<button class="rpeg" style="visibility: hidden;">x</button>'
-    acell2.innerHTML = '<button class="rpeg" style="visibility: hidden;">x</button>'
-    acell3.innerHTML = '<button class="rpeg" style="visibility: hidden;">x</button>'
-    acell4.innerHTML = '<button class="rpeg" style="visibility: hidden;">x</button>'
+    acell1.innerHTML = '<button class="rpegx" style="visibility: hidden;">x</button>'
+    acell2.innerHTML = '<button class="rpegx" style="visibility: hidden;">x</button>'
+    acell3.innerHTML = '<button class="rpegx" style="visibility: hidden;">x</button>'
+    acell4.innerHTML = '<button class="rpegx" style="visibility: hidden;">x</button>'
 
     cell1.addEventListener('click', getRowColumnDetails)
     cell2.addEventListener('click', getRowColumnDetails)
