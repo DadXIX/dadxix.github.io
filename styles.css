@@ -1,0 +1,327 @@
+/* Hard refresh - 
+Ctrl-F5 or Ctrl-Refresh (Chrome)
+Shift-Refresh (Firefox)
+ */
+
+body {
+    color: #212529;
+    font-size: 1rem;
+    margin: 0;
+    text-align: center;
+}
+
+table {
+    margin: 2rem auto;
+    border-collapse: collapse;
+}
+
+tr, td {
+    padding: 0.25rem 0.25rem;
+}
+
+p {
+    font-size: 1.0625rem;
+}
+
+/* Class selector */
+/* a result peg - x version*/
+.rpegx {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0.05rem 0.4rem;
+    margin: .1rem;
+    background-color: gray;
+    color: black;
+    border-radius: 0.9rem;
+    font-size: 1rem;
+}
+
+/* a result peg - black version*/
+.rpegbk {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0.05rem 0.4rem;
+    margin: .1rem;
+    background-color: black;
+    color: black;
+    border-radius: 0.9rem;
+    font-size: 1rem;
+}
+
+/* a result peg - white version*/
+.rpegwh {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0.05rem 0.4rem;
+    margin: .1rem;
+    background-color: white;
+    color: white;
+    border-radius: 0.9rem;
+    font-size: 1rem;
+}
+
+.tpeg {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 1.25rem 1.25rem;
+    margin: .2rem;
+    background-color: white;
+    color: white;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.tpeg1 {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 1.25rem 1.25rem;
+    margin: .2rem;
+    background-color: red;
+    color: white;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.tpeg2 {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 1.25rem 1.25rem;
+    margin: .2rem;
+    background-color: orange;
+    color: white;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.tpeg3 {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 1.25rem 1.25rem;
+    margin: .2rem;
+    background-color: #18a7b7;
+    color: white;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.tpeg4 {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 1.25rem 1.25rem;
+    margin: .2rem;
+    background-color: plum;
+    color: white;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.tpeg5 {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 1.25rem 1.25rem;
+    margin: .2rem;
+    background-color: olive;
+    color: white;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.tpeg6 {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 1.25rem 1.25rem;
+    margin: .2rem;
+    background-color: yellow;
+    color: white;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.tpeg7 {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 1.25rem 1.25rem;
+    margin: .2rem;
+    background-color: #80ff80;
+    color: white;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.tpeg8 {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 1.25rem 1.25rem;
+    margin: .2rem;
+    background-color: gray;
+    color: white;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.tpeg9 {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 1.25rem 1.25rem;
+    margin: .2rem;
+    background-color: #fe6d6d;
+    color: white;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.tpeg10 {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 1.25rem 1.25rem;
+    margin: .2rem;
+    background-color: black;
+    color: white;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.tbutton {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0.75rem 0.75rem;
+    margin: .2rem .5rem;
+    background-color: #477BFF;
+    color: white;
+    border-radius: .75rem;
+    /* border: none; */
+    font-size: 0.875rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.peg {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 1rem 1.6rem;
+    margin: .25rem;
+    background-color: white;
+    color: white;
+    border-radius: 1.7rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.peg-small {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0.5rem 0.8rem;
+    margin: .125rem;
+    color: white;
+    border-radius: 0.9rem;
+    font-size: 0.625rem;
+    cursor: pointer;
+}
+
+.button {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 1rem 1rem;
+    margin: 1rem;
+    background-color: #477BFF;
+    color: white;
+    border: red;
+    border-radius: .75rem;
+    /* border: none; */
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.red {
+    background-color: red;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.ocean {
+    background-color: #18a7b7;
+}
+
+.plum {
+    background-color: plum;
+}
+
+.olive {
+    background-color: olive;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: #80ff80
+}
+
+.gray {
+    background-color: gray;
+}
+
+.pink {
+    background-color: #fe6d6d;
+}
+
+.black {
+    background-color: black;
+}
+
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    height: 400px;
+}
+
+.header {
+    background-color: #477bff;
+    color: #fff;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.footer {
+    font-size: 1.25rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section {
+    padding: 0.5rem 2rem 1rem 2rem;
+}
+
+/*.is-visible {
+    display: inline-block;
+}*/
+
+.is-hidden {
+    display: none;
+}
+
+
+
+
