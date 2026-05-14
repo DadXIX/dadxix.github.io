@@ -11,13 +11,12 @@
         <div class="header">
             MASTERMIND
         </div>
-        <table id="mmHeader">
-            <tr>
-                <td><button class="tbutton" style="background-color: green;" onclick="analyzeRow()">SUBMIT</button></td>
-                <td><button class="tbutton" onclick="addRow()">NEXT ROW</button></td>
-                <td><button class="tbutton" style="background-color: red;" onclick="removeRow()">RESTART</button></td>
-            </tr>
-        </table>
+        <p>
+            <button id="start" class="tbutton is-visible green" onclick="addRow()">START</button>
+            <button id="submit" class="tbutton is-hidden" onclick="analyzeRow()">SUBMIT</button>
+            <button id="nextrow" class="tbutton is-hidden" onclick="addRow()">NEXT ROW</button>
+            <button class="tbutton red" onclick="removeRow()">RESTART</button>
+        </p>
         <table id="mmTable">
             <tr>
             </tr>
@@ -37,7 +36,7 @@
                 <input type="button" class="peg-small plum">
                 <input type="button" class="peg-small olive">
                 <input type="button" class="peg-small yellow">            
-                <input type="button" class="peg-small green">
+                <input type="button" class="peg-small ltgreen">
                 <input type="button" class="peg-small gray">
                 <input type="button" class="peg-small pink">            
                 <input type="button" class="peg-small black">
