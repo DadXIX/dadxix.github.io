@@ -58,6 +58,14 @@ function analyzeRow() {
     game_status[2] = 1
     game_status[3] = 0
 
+    // show next row button and remove submit button
+    var submit = document.getElementById("submit")
+    submit.classList.add("is-hidden")
+    submit.classList.remove("is-visible")
+    var nextrow = document.getElementById("nextrow")
+    nextrow.classList.add("is-visible")
+    nextrow.classList.remove("is-hidden")
+
     var table = document.getElementById("mmTable")
     var tbodyRowCount = table.tBodies[0].rows.length;
     cell = table.tBodies[0].rows[tbodyRowCount-1].cells;
@@ -262,6 +270,17 @@ function removeRow() {
     //reset the color board and get new answer key
     init_color_board()
     ans_key = generate_answer_key();
+
+    // show next row button and remove submit button
+    var submit = document.getElementById("submit")
+    submit.classList.add("is-hidden")
+    submit.classList.remove("is-visible")
+    var nextrow = document.getElementById("nextrow")
+    nextrow.classList.add("is-hidden")
+    nextrow.classList.remove("is-visible")
+    var start = document.getElementById("start")
+    start.classList.add("is-visible")
+    start.classList.remove("is-hidden")
 }
 
 function addResult() {
@@ -323,13 +342,21 @@ function addRow() {
     cell3.addEventListener('click', getRowColumnDetails)
     cell4.addEventListener('click', getRowColumnDetails)
 
-
-
     // after a next row press: disable next row functionality until 
     // current row has been submitted 
     game_status[2] = 0
     game_status[3] = 1
-    // alert(game_status)
+
+    // show submit button and remove add row and start button
+    var submit = document.getElementById("submit")
+    submit.classList.add("is-visible")
+    submit.classList.remove("is-hidden")
+    var nextrow = document.getElementById("nextrow")
+    nextrow.classList.add("is-hidden")
+    nextrow.classList.remove("is-visible")
+    var start = document.getElementById("start")
+    start.classList.add("is-hidden")
+    start.classList.remove("is-visible")
 }
 
 function getRowColumnDetails(event) {
